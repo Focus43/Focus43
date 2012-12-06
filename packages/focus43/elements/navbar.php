@@ -32,7 +32,7 @@
                         <a href="#examples">Built by Us</a>
                     </li>
                     <li class="">
-                        <a href="#contact-modal" data-toggle="modal">Talk to us!</a>
+                        <a class="modalize" data-url="<?php echo F43_PACKAGE_TOOLS; ?>modals/contact_us" data-width="550" title="Contact Us">Talk to us!</a>
                     </li>
                 </ul>
             </div>

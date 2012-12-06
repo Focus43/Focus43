@@ -809,3 +809,7 @@ h2 + .row {
     float: none;
   }
 }
+
+/* modalbox */
+div#modalBox {top:350px;}
+div#modalBox div.modal-body {max-height:550px;}

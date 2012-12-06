@@ -90,7 +90,33 @@ var scrollNavigationUtil = {
 };
 
 
+/**
+ * Modal Stuff
+ */
+function openModal( opts ){
+	// remove any existing ones
+	$('#modalBox').remove();
+	
+    // add modalbox to the DOM
+    $('body').append('<div id="modalBox" class="modal hide fade"><div class="modal-header"><a class="close" data-dismiss="modal">×</a><h3 class="title-target"></h3></div><div class="loadTarget"></div></div>');
 
+    // select the modalBox element
+    var modalBox = $('#modalBox');
+
+    modalBox.css({width:opts.width,'margin-left': -(+(opts.width/2))}).modal();
+    $('h3.title-target',modalBox).empty().text( opts.title );
+    $('div.loadTarget', modalBox).empty().load( opts.url, opts.data);
+}
+
+$(document).on('click', '.modalize', function(){
+	var $clicked = $(this);
+	openModal({
+		width: $clicked.attr('data-width') || 'auto',
+		title: $clicked.attr('title'),
+		url: $clicked.attr('data-url'),
+		data: ($clicked.attr('data-id') ? { id: $clicked.attr('data-id') } : {})
+	});
+});
 
 
 $(window).load(function(){
