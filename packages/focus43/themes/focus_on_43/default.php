@@ -10,7 +10,7 @@
         <?php
         // move navbar down so we can get to c5 bar in admin mode
             if (User::isLoggedIn()) {
-                echo "<style type=text/css> .navbar { margin-top: 49px; } </style>";
+                echo "<style type=text/css> body { top: -48px; } .navbar {margin-top:48px;z-index:5;} </style>";
             }
         ?>
 

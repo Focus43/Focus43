@@ -8,12 +8,13 @@
  */
 
 $name  = $userObj->uName;
-
+$drawnPhotoObj 	= $userObj->getAttribute('photo_drawn'); /** @var $drawnPhotoObj FileVersion */
+$realPhotoObj	= $userObj->getAttribute('photo_real'); /** @var $realPhotoObj FileVersion */
 ?>
 
 
     <div class="span4  <?php echo $name; ?>">
-        <a class="person <?php echo $name; ?>" href="#<?php echo $name; ?>"><img src="<?php echo F43_PACKAGE_IMAGES_DIR . "peeps/" . $name; ?>.png" class="img-circle"> </a>
+        <a class="person <?php echo $name; ?>" href="#<?php echo $name; ?>"><img src="<?php echo $drawnPhotoObj->getURL(); ?>" class="img-circle"> </a>
         <h5><?php echo ucfirst($name); ?></h5>
 
         <div class='peeps-deets'>
@@ -38,7 +39,7 @@ $name  = $userObj->uName;
             'mouseenter': function (e) {
                 var $this = $(this)
                 $this.fadeOut('fast', function () {
-                    $this.attr('src', '<?php echo F43_PACKAGE_IMAGES_DIR . "peeps/real/" . $name . ".jpg"; ?>');
+                    $this.attr('src', '<?php echo $realPhotoObj->getURL(); ?>');
                     $this.addClass('on');
                     $this.fadeIn('fast');
                 })
@@ -47,7 +48,7 @@ $name  = $userObj->uName;
             'mouseleave': function (e) {
                 var $this = $(this)
                 $this.fadeOut('fast', function () {
-                    $this.attr('src', '<?php echo F43_PACKAGE_IMAGES_DIR . "peeps/" . $name . ".png"; ?>');
+                    $this.attr('src', '<?php echo $drawnPhotoObj->getURL(); ?>');
                     $this.removeClass('on');
                     $this.fadeIn('fast');
                 })

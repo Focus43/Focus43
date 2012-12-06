@@ -13,7 +13,7 @@
 			
 			//$this->addFooterItem( $this->getHelper('html')->javascript('google-code-prettify/prettify.js', self::PACKAGE_HANDLE) );
 			$this->addFooterItem( $this->getHelper('html')->javascript('bootstrap/bootstrap.min.js', self::PACKAGE_HANDLE) );
-			$this->addFooterItem( $this->getHelper('html')->javascript('bootstrap/bootstrap-modal.js', self::PACKAGE_HANDLE) );
+			//$this->addFooterItem( $this->getHelper('html')->javascript('bootstrap/bootstrap-modal.js', self::PACKAGE_HANDLE) );
 			$this->addFooterItem( $this->getHelper('html')->javascript('bootstrap/bootstrap-popover.js', self::PACKAGE_HANDLE) );
 			$this->addFooterItem( $this->getHelper('html')->javascript('bootstrap/bootstrap-transition.js', self::PACKAGE_HANDLE) );
 			$this->addFooterItem( $this->getHelper('html')->javascript('global.js', self::PACKAGE_HANDLE) );
