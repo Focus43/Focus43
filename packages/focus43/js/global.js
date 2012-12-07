@@ -1,13 +1,20 @@
-/**
- * Created with JetBrains RubyMine.
- * User: superrunt
- * Date: 11/26/12
- * Time: 5:11 PM
- * To change this template use File | Settings | File Templates.
- */
+// force forms with data-method="ajax" attributes to submit via... um... ajax
+$('form[data-method="ajax"]').ajaxifyForm({
+	hideFeedbackAfter: 2500
+});
+
+// listen for the response on forms being submitted via ajax. if they were
+// submitted from a modal, close it after 1 second *if it was succesful*
+$(document).on('ajaxify_complete', 'form[data-method="ajax"]', function(_event, _respData, _config){
+	var $modal = $(this).parents('.modal');
+	if( $modal.length && _respData.code == 1 ){
+		setTimeout(function( $modalBox ){
+			$modalBox.modal('hide');
+		}, 1000, $modal);
+	}
+});
 
 // Scrolling stuff
-
 (function( $ ) {
 
     $.fn.scrollTo = function ( target, duration, options, whenDone ) {

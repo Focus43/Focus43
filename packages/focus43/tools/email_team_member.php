@@ -20,31 +20,11 @@
            ->setTo( $_REQUEST['send_to'] )
            ->sendEmail();
     
+	$errorList = (array) $mailer->getError()->getList();
+	
     // SETUP THE RESPONSE OBJECT
     $respObj        = new stdClass();
     $respObj->code  = (int)$mailer->sentOK();
-    $respObj->error = (array)$mailer->getError()->getList();
-    $respObj->msg   = (bool)$mailer->sentOK() ? 
-                        'Thanks for getting in touch!' : 
-                        implode('<br />', $mailer->getError()->getList());
+	$respObj->messages = empty( $errorList ) ? array('Thanks for getting touch!') : $errorList;
     
      echo Loader::helper('json')->encode($respObj);
-
-    ?>
-
-<script type="text/javascript">
-//    $.ajax({
-//        type: "POST",
-//        url: "process.php",
-//        data: dataString,
-//        success: function() {
-//            $('#contact_form').html("<div id='message'></div>");
-//            $('#message').html("<h2>Contact Form Submitted!</h2>")
-//                    .append("<p>We will be in touch soon.</p>")
-//                    .hide()
-//                    .fadeIn(1500, function() {
-//                        $('#message').append("<img id='checkmark' src='images/check.png' />");
-//                    });
-//        }
-//    });
-</script>
