@@ -8,17 +8,25 @@
         <?php Loader::element('header_required'); ?>
 
         <?php
-        // move navbar down so we can get to c5 bar in admin mode
         if (User::isLoggedIn()) {
+//            Loader::element('header_required');
+            // move navbar down so we can get to c5 bar in admin mode
             echo "<style type=text/css> body { top: -48px; } .navbar { margin-top:48px; z-index:5; } </style>";
         }
-
+        // Here comes a hack to preload images
+        ?>
+        <script type="text/javascript">
+            $(window).load( function() {
+        <?php
         if ( count ($teamMembers) > 0 ) {
-            foreach($teamMembers AS $userObj){
-                echo "<link rel='team-member' href='{$userObj->getAttribute('photo_real')->getURL()}'>";
+            foreach($teamMembers AS $userObj) {
+                echo "\nvar pic{$userObj->uName}= new Image();\n";
+                echo "pic{$userObj->uName}.src='{$userObj->getAttribute('photo_real')->getURL()}';";
             }
         }
         ?>
+        })
+        </script>
 
     </head>
 

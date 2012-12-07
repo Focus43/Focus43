@@ -119,7 +119,7 @@ $(document).on('click', '.modalize', function(){
 	var $clicked = $(this);
 	openModal({
 		width: $clicked.attr('data-width') || 'auto',
-		title: $clicked.attr('title'),
+		title: $clicked.attr('formTitle'),
 		url: $clicked.attr('data-url'),
 		data: ($clicked.attr('data-id') ? { id: $clicked.attr('data-id') } : {})
 	});
