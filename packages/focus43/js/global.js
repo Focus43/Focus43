@@ -1,6 +1,6 @@
 // force forms with data-method="ajax" attributes to submit via... um... ajax
 $('form[data-method="ajax"]').ajaxifyForm({
-	hideFeedbackAfter: 2500
+	hideFeedbackAfter: 3000
 });
 
 // listen for the response on forms being submitted via ajax. if they were
@@ -10,7 +10,7 @@ $(document).on('ajaxify_complete', 'form[data-method="ajax"]', function(_event, 
 	if( $modal.length && _respData.code == 1 ){
 		setTimeout(function( $modalBox ){
 			$modalBox.modal('hide');
-		}, 1000, $modal);
+		}, 2000, $modal);
 	}
 });
 
@@ -73,7 +73,7 @@ var scrollNavigationUtil = {
     addScrollToLinks: function() {
 
         scrollNavigationUtil.navigationUl.children().children().each( function ( idx, elm ) {
-            if ( $(elm).attr('data-toggle') ) return
+            if ( $(elm).hasClass('modalize') ) return
             $(elm).click(scrollNavigationUtil.scrollToTopic);
         });
 

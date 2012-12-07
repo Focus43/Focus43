@@ -9,9 +9,15 @@
 
         <?php
         // move navbar down so we can get to c5 bar in admin mode
-            if (User::isLoggedIn()) {
-                echo "<style type=text/css> body { top: -48px; } .navbar { margin-top:48px; z-index:5; } </style>";
+        if (User::isLoggedIn()) {
+            echo "<style type=text/css> body { top: -48px; } .navbar { margin-top:48px; z-index:5; } </style>";
+        }
+
+        if ( count ($teamMembers) > 0 ) {
+            foreach($teamMembers AS $userObj){
+                echo "<link rel='team-member' href='{$userObj->getAttribute('photo_real')->getURL()}'>";
             }
+        }
         ?>
 
     </head>
@@ -27,9 +33,7 @@
                     <div class="logo">
                         <img src="<?php echo F43_PACKAGE_IMAGES_DIR; ?>logo-text.png">
                     </div>
-                    <p>Focus43 is a web and iOS application development company.<br>
-                        We are agile, flexible, and focused on delivering <br>
-                        a product you are happy with. </p>
+                    <p><?php $a = new Area('Tagline'); $a->display($c); ?></p>
                 </div>
 
                 <div class="social">
@@ -39,7 +43,7 @@
                                 <a href="https://twitter.com/focus43dev" target="_blank" class="twitter-button diyIcon"></a>
                             </li>
                             <li class="linkedin-btn">
-                                <a href="https://facebook.com/focus43" target="_blank" class="linkedin-button diyIcon" ></a>
+                                <a href="http://www.linkedin.com/company/2814935" target="_blank" class="linkedin-button diyIcon" ></a>
                             </li>
                             <li class="facebook-btn">
                                 <a href="https://facebook.com/focus43" target="_blank" class="facebook-button diyIcon" ></a>
@@ -79,9 +83,12 @@
                     <div class="row-fluid team item">
                         <?php
                         // TODO: add carousel if more than 3 members
-                        foreach($teamMembers AS $userObj){
-                            Loader::packageElement( 'team_member', 'focus43', array( 'userObj' => $userObj ) );
+                        if ( count ($teamMembers) > 0 ) {
+                            foreach($teamMembers AS $userObj){
+                                Loader::packageElement( 'team_member', 'focus43', array( 'userObj' => $userObj ) );
+                            }
                         }
+
     //                  ?>
                     </div>
 
@@ -91,25 +98,15 @@
                     <h1>Stuff we've built</h1>
                     <div class="row-fluid" id="examples">
                         <ul class="thumbnails example-sites">
-<!--                            All the image links in here gets the thumbnail class added onLoad -->
-                               <?php // TODO: add carousel to this if li count is > 4 ?>
-                            <li class="span3">
+<!--                          All the image links in here gets the thumbnail class added onLoad -->
+                             <?php // TODO: add automatic setting of correct classes dep on number of examples
+                                   // add carousel to this if li count is > 4, still only display two at a time ?>
+                            <li class="span6">
                                 <?php $a = new Area('Work Example 1 IMAGE'); $a->display($c); ?>
                             </li>
-                            <li class="span3">
+
+                            <li class="span6">
                                 <?php $a = new Area('Work Example 2 IMAGE'); $a->display($c); ?>
-<!--                                <h3>--><?php //$a = new Area('Work Example 1 TYPE'); $a->display($c); ?><!--</h3>-->
-<!--                                --><?php //$a = new Area('Work Example 1 NAME'); $a->display($c); ?>
-                            </li>
-                            <li class="span3">
-                                <?php $a = new Area('Work Example 3 IMAGE'); $a->display($c); ?>
-                                <!--                                <h3>--><?php //$a = new Area('Work Example 1 TYPE'); $a->display($c); ?><!--</h3>-->
-                                <!--                                --><?php //$a = new Area('Work Example 1 NAME'); $a->display($c); ?>
-                            </li>
-                            <li class="span3">
-                                <?php $a = new Area('Work Example 4 IMAGE'); $a->display($c); ?>
-                                <!--                                <h3>--><?php //$a = new Area('Work Example 1 TYPE'); $a->display($c); ?><!--</h3>-->
-                                <!--                                --><?php //$a = new Area('Work Example 1 NAME'); $a->display($c); ?>
                             </li>
                         </ul>
                     </div>

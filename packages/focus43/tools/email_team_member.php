@@ -1,11 +1,7 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied."));
 
     Loader::library('validate_and_send_email', 'focus43');
-    Loader::model('userinfo');
-
-    $user = UserInfo::getByUserName($_REQUEST['username']);
     
-    // Now actually use it
     $mailer = new ValidateAndSendEmail( $_REQUEST );
     
     $mailer->addRequired('name', 'Name is required.');
