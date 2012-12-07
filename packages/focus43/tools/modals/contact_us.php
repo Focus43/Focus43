@@ -2,8 +2,6 @@
 
     <form id="email" data-method="ajax" data-show-feedback="true" action="<?php echo F43_PACKAGE_TOOLS; ?>email_team_member">
         <fieldset>
-            <legend>Send an email</legend>
-
 
             <?php
             echo Loader::helper('form')->hidden('send_to', $_REQUEST['send_to']);
