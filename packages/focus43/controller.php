@@ -13,7 +13,7 @@ class Focus43Package extends Package {
 
     protected $pkgHandle = 'focus43';
     protected $appVersionRequired = '5.6.0.2';
-    protected $pkgVersion = '1.2.01';
+    protected $pkgVersion = '1.2.02';
 
     public function getPackageDescription() {
         return t("Focus43 company site.");
@@ -36,7 +36,8 @@ class Focus43Package extends Package {
 	
 	private function registerAutoloadClasses(){
 		Loader::registerAutoload(array(
-			'BasePageTypeController' => array('library', 'base_page_type_controller', $this->pkgHandle)
+			'BasePageTypeController' => array('library', 'base_page_type_controller', $this->pkgHandle),
+            'ValidateAndSendEmail' => array('library', 'validate_and_send_email', $this->pkgHandle)
 		));
 	}
 	

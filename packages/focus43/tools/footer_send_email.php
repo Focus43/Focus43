@@ -1,6 +1,6 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied."));
 
-    Loader::library('validate_and_send_email', 'circ');
+    Loader::library('validate_and_send_email', 'focus43');
     
     $mailer = new ValidateAndSendEmail( $_REQUEST );
     

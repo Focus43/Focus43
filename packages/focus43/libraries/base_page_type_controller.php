@@ -7,6 +7,7 @@
 		
 		
 		public function on_start(){
+
 			$this->addHeaderItem( $this->getHelper('html')->css('bootstrap.css', self::PACKAGE_HANDLE) );
 			$this->addHeaderItem( $this->getHelper('html')->css('bootstrap-responsive.css', self::PACKAGE_HANDLE) );
 			$this->addHeaderItem( $this->getHelper('html')->css('global.css', self::PACKAGE_HANDLE) );

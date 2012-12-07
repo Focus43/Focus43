@@ -10,21 +10,9 @@
         <?php
         // move navbar down so we can get to c5 bar in admin mode
             if (User::isLoggedIn()) {
-                echo "<style type=text/css> body { top: -48px; } .navbar {margin-top:48px;z-index:5;} </style>";
+                echo "<style type=text/css> body { top: -48px; } .navbar { margin-top:48px; z-index:5; } </style>";
             }
         ?>
-
-<!--        <script type="text/javascript">-->
-<!--            function openWorkModal() {-->
-<!--                $.fn.dialog.open({-->
-<!--                    title: 'View Temp Files',-->
-<!--                    href: "http://www.google.com",-->
-<!--                    width: '85%',-->
-<!--                    modal: false,-->
-<!--                    height: '75%'-->
-<!--                });-->
-<!--            }-->
-<!--        </script>-->
 
     </head>
 
@@ -146,39 +134,6 @@
         <!--</ul>-->
     </div>
 </footer>
-
-<!-- Contact Modal
-================================================== -->
-<!--<div id="contact-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="contact-modal-label" aria-hidden="true">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="contact-modal-label">Contact Us</h3>
-    </div>
-    <div class="modal-body">
-        <p>One fine body…</p>
-    </div>
-    <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <button class="btn btn-primary">Save changes</button>
-    </div>
-</div>-->
-
-<!-- Work Example Modal
-================================================== -->
-<!--<div id="work-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="work-modal-label" aria-hidden="true">-->
-<!--    <div class="modal-header">-->
-<!--        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
-<!--        <h3 id="work-modal-label">Work Example</h3>-->
-<!--    </div>-->
-<!--    <div class="modal-body">-->
-<!--        <p>One fine body…</p>-->
-<!--    </div>-->
-<!--    <div class="modal-footer">-->
-<!--        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>-->
-<!--        <button class="btn btn-primary">Save changes</button>-->
-<!--    </div>-->
-<!--</div>-->
-
 
     <?php
         // CONCRETE5 REQ'D ELEMENT //
