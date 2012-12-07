@@ -32,7 +32,7 @@
                         <a href="#examples">Built by Us</a>
                     </li>
                     <li class="">
-                        <a class="modalize" data-url="<?php echo F43_PACKAGE_TOOLS; ?>modals/contact_us?send_to=hi@focus-43.com" data-width="550" formTitle="Contact Us">Talk to us!</a>
+                        <a class="modalize" data-url="<?php echo F43_PACKAGE_TOOLS; ?>modals/contact_us?send_to=hi@focus-43.com" data-width="550" formtitle="Contact Us">Talk to us!</a>
                     </li>
                 </ul>
             </div>
