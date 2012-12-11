@@ -108,6 +108,7 @@ var scrollNavigationUtil = {
  * Modal Stuff
  */
 function openModal( opts ){
+    console.log('openModal')
 	// remove any existing ones
 	$('#modalBox').remove();
 	
@@ -123,7 +124,9 @@ function openModal( opts ){
 }
 
 if (isMobile) {
-    $(document).on('touchend', '.modalize', function(){
+    console.log('isMobile')
+    $(document).on('touchend', '.modalize', function(e){
+        e.preventDefault()
         var $clicked = $(this);
         openModal({
             width: $clicked.attr('data-width') || 'auto',
@@ -131,6 +134,7 @@ if (isMobile) {
             url: $clicked.attr('data-url'),
             data: ($clicked.attr('data-id') ? { id: $clicked.attr('data-id') } : {})
         });
+        console.log('touchend end')
     });
 } else {
     $(document).on('click', '.modalize', function(){

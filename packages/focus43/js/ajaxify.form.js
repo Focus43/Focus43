@@ -39,7 +39,7 @@
 		// setup a listener on the DOCUMENT for only the selector
 		$(document).on('submit', this.selector, {defaults: _settings}, function( _submitEvent ){
 			_submitEvent.preventDefault();
-				
+
 			// the form in the DOM being submitted
 			var $form = $(this);
 			
