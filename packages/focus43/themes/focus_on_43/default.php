@@ -5,6 +5,8 @@
 
     <head>
 
+        <meta name="viewport" content="width=device-width">
+
         <?php Loader::element('header_required'); ?>
 
         <?php

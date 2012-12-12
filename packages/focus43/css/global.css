@@ -676,11 +676,16 @@ h2 + .row {
 
   /* Widen masthead and social buttons to fill body padding */
   .jumbotron {
-    padding: 40px 20px;
+    padding: 10px 10px;
     margin-top:   -20px; /* Offset bottom margin on .navbar */
     margin-right: -20px;
     margin-left:  -20px;
   }
+
+.jumbotron .logo img {
+    background-size: 300px;
+}
+
   .masthead h1 {
     font-size: 90px;
   }
@@ -699,8 +704,6 @@ h2 + .row {
   .show-grid [class*="span"] {
     margin-bottom: 5px;
   }
-
-
 
   /* Unfloat the back to top link in footer */
   .footer {
