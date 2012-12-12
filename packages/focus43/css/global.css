@@ -424,6 +424,14 @@ a:hover.diyIcon {
     -o-transform:rotate(7deg); /* Opera */
 }
 
+/* modalbox */
+div#modalBox {top:350px;}
+
+div#modalBox div.modal-body {max-height:550px;}
+
+div#modalBox .message {
+    margin-top: 5px;
+}
 
 
 /* Special grid styles
@@ -780,6 +788,9 @@ h2 + .row {
     word-break: break-all;
   }
 
+  /* modal box needs to be higher on screen */
+    div#modalBox {top:30px;}
+
   /* Modal example */
   .modal-example .modal {
     position: relative;
@@ -800,12 +811,4 @@ h2 + .row {
   }
 }
 
-/* modalbox */
-div#modalBox {top:350px;}
-
-div#modalBox div.modal-body {max-height:550px;}
-
-div#modalBox .message {
-    margin-top: 5px;
-}
 

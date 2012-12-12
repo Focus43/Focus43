@@ -124,17 +124,15 @@ function openModal( opts ){
 }
 
 if (isMobile) {
-    console.log('isMobile')
     $(document).on('touchend', '.modalize', function(e){
         e.preventDefault()
         var $clicked = $(this);
         openModal({
-            width: $clicked.attr('data-width') || 'auto',
+            width: 'auto',
             title: $clicked.attr('formtitle'),
             url: $clicked.attr('data-url'),
             data: ($clicked.attr('data-id') ? { id: $clicked.attr('data-id') } : {})
         });
-        console.log('touchend end')
     });
 } else {
     $(document).on('click', '.modalize', function(){
