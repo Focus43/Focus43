@@ -359,8 +359,8 @@ a:hover.diyIcon {
 }
 
 .marketing .team .popover a {
-    float: right;
-    display: block;
+    /*float: right;*/
+    display: inline-block;
     height: 40px;
     width: 40px;
     margin: 5px;
@@ -380,6 +380,14 @@ a:hover.diyIcon {
 
 .marketing .competencies {
     /*height: 290px;*/
+}
+
+.bio {
+    text-align: center;
+}
+
+.bio .link-out {
+    margin: 0 auto;
 }
 
 
@@ -682,16 +690,21 @@ h2 + .row {
     padding-top: 0;
   }
 
+/*.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {*/
+    /*margin-left: -5px;*/
+    /*margin-left: -5px;*/
+/*}*/
+    /**/
   /* Widen masthead and social buttons to fill body padding */
   .jumbotron {
     padding: 10px 10px;
     margin-top:   -20px; /* Offset bottom margin on .navbar */
-    margin-right: -20px;
-    margin-left:  -20px;
+    margin-right: -5px;
+    margin-left:  -5px;
   }
 
 .jumbotron .logo img {
-    background-size: 300px;
+    background-size: 270px;
 }
 
   .masthead h1 {

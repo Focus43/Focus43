@@ -13,7 +13,7 @@ class Focus43Package extends Package {
 
     protected $pkgHandle = 'focus43';
     protected $appVersionRequired = '5.6.0.2';
-    protected $pkgVersion = '1.2.02';
+    protected $pkgVersion = '1.2.03';
 
     public function getPackageDescription() {
         return t("Focus43 company site.");
@@ -151,7 +151,15 @@ class Focus43Package extends Package {
 				'akName'	=> t('Full Name')
 			), $this->packageObject())->setAttributeSet($teamDisplaySet);
 		}
-		
+
+        // title
+        if( !(is_object(UserAttributeKey::getByHandle('title'))) ){
+            UserAttributeKey::add($this->attributeType('text'), array(
+                'akHandle'	=> 'title',
+                'akName'	=> t('Title')
+            ), $this->packageObject())->setAttributeSet($teamDisplaySet);
+        }
+
 		// linkedin
 		if( !(is_object(UserAttributeKey::getByHandle('linkedin'))) ){
 			UserAttributeKey::add($this->attributeType('text'), array(

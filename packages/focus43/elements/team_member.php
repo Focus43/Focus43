@@ -18,8 +18,15 @@ $realPhotoObj	= $userObj->getAttribute('photo_real'); /** @var $realPhotoObj Fil
         <h5><?php echo ucfirst($name); ?></h5>
 
         <div class='peeps-deets'>
-            <a class='email diyIcon modalize' data-url="<?php echo F43_PACKAGE_TOOLS; ?>modals/contact_us?send_to=<?php echo $name; ?>@focus-43.com" data-width="550" formtitle="Contact <?php echo ucfirst($name); ?>"></a>
-            <a class='linkedin diyIcon' href='http://www.linkedin.com/profile/view?id=<?php echo $userObj->getAttribute('linkedin'); ?>' target='_blank'></a>
+            <div class="bio">
+                <b><?php echo $userObj->getAttribute('title'); ?></b><br>
+                Find out more about <?php echo ucfirst($name); ?>:<br>
+                <div class="link-out">
+                    <a class='email diyIcon modalize' data-url="<?php echo F43_PACKAGE_TOOLS; ?>modals/contact_us?send_to=<?php echo $name; ?>@focus-43.com" data-width="550" formtitle="Contact <?php echo ucfirst($name); ?>"></a>
+                    <a class='linkedin diyIcon' href='http://www.linkedin.com/profile/view?id=<?php echo $userObj->getAttribute('linkedin'); ?>' target='_blank'></a>
+                </div>
+            </div>
+
         </div>
     </div>
 

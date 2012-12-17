@@ -8,7 +8,7 @@
             echo "<br>";
             echo Loader::helper('form')->text('name', '', array('placeholder'=> 'Name', 'class'=>'span4'));
             echo "<br>";
-            echo Loader::helper('form')->email('email', '', array('placeholder'=> 'Email', 'class'=>'span4'));
+            echo Loader::helper('form')->email('email', '', array('placeholder'=> 'Email', 'class'=>'span4', 'type'=>'email'));
             echo "<br>";
             echo Loader::helper('form')->textarea('message', '', array('placeholder'=> 'Message', 'class'=>'span4'));
             echo "<br>";
