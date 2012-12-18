@@ -697,14 +697,14 @@ h2 + .row {
     /**/
   /* Widen masthead and social buttons to fill body padding */
   .jumbotron {
-    padding: 10px 10px;
+    /*padding: 10px 10px;*/
     margin-top:   -20px; /* Offset bottom margin on .navbar */
     margin-right: -5px;
     margin-left:  -5px;
   }
 
 .jumbotron .logo img {
-    background-size: 270px;
+    background-size: 300px;
 }
 
   .masthead h1 {
@@ -753,17 +753,33 @@ h2 + .row {
   }
 
   /* Downsize the jumbotrons */
+
+    .jumbotron {
+        margin-right: -20px;
+        margin-left:  -20px;
+    }
+
   .jumbotron h1 {
     font-size: 45px;
   }
+
   .jumbotron p,
   .jumbotron .btn {
     font-size: 18px;
   }
+
   .jumbotron .btn {
     display: block;
     margin: 0 auto;
   }
+
+  .jumbotron .container {
+      padding: 0 7px;
+  }
+
+    .f43-social-buttons li a {
+        background-size: 25px;
+    }
 
   /* center align subhead text like the masthead */
   .subhead h1,
@@ -802,7 +818,9 @@ h2 + .row {
   }
 
   /* modal box needs to be higher on screen */
-    div#modalBox {top:30px;}
+    div#modalBox {
+        top:30px;
+    }
 
   /* Modal example */
   .modal-example .modal {
@@ -824,4 +842,35 @@ h2 + .row {
   }
 }
 
+/* retina displays */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 144dpi),
+only screen and (min-resolution: 1.5dppx) {
+
+    body {
+        /*background-color: red;*/
+    }
+
+    .marketing .team .popover a.linkedin {
+        background: url(../images/social/icon_linkedin.png) no-repeat left center;
+        background-size: 40px;
+    }
+
+    /*.marketing .team .popover a.email {*/
+        /*background: url(../images/social/icon_email.png) no-repeat left center;*/
+    /*}*/
+
+    /*.marketing .team .popover a.website {*/
+        /*background: url(../images/social/icon_website.png) no-repeat left center;*/
+    /*}*/
+
+    .footer a.back-up {
+        background: url(../images/arrow@2x.png) no-repeat top left;
+        background-size: 50%;
+    }
+}
 
