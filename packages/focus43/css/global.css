@@ -125,7 +125,10 @@ hr.soften {
 }
 
 .jumbotron .logo img {
-    background: url(../images/logo-squiggle.png) no-repeat center center;
+    background: url(../images/logo-squiggle@2x.png) no-repeat center center;
+    background-size: 500px;
+    /*width: 504px;*/
+    /*height: 222px;*/
 }
 
 a:hover.diyIcon {
@@ -246,18 +249,19 @@ a:hover.diyIcon {
     display: block;
     font-size: 20px;
     color: #000;
+    background-size: 70px !important;
 }
 
 .f43-social-buttons li a.twitter-button {
-    background: url(../images/social/icon_twitter.png) no-repeat left center;
+    background: url(../images/social/icon_twitter@2x.png) no-repeat left center;
 }
 
 .f43-social-buttons li a.facebook-button {
-    background: url(../images/social/icon_fb.png) no-repeat left center;
+    background: url(../images/social/icon_fb@2x.png) no-repeat left center;
 }
 
 .f43-social-buttons li a.linkedin-button {
-    background: url(../images/social/icon_linkedin.png) no-repeat left center;
+    background: url(../images/social/icon_linkedin@2x.png) no-repeat left center;
 }
 
 
@@ -703,10 +707,6 @@ h2 + .row {
     margin-left:  -5px;
   }
 
-.jumbotron .logo img {
-    background-size: 300px;
-}
-
   .masthead h1 {
     font-size: 90px;
   }
@@ -759,6 +759,10 @@ h2 + .row {
         margin-left:  -20px;
     }
 
+    .jumbotron .logo img {
+        background-size: 300px;
+    }
+
   .jumbotron h1 {
     font-size: 45px;
   }
@@ -777,9 +781,9 @@ h2 + .row {
       padding: 0 7px;
   }
 
-    .f43-social-buttons li a {
-        background-size: 25px;
-    }
+    /*.f43-social-buttons li a {*/
+        /*background-size: 25px;*/
+    /*}*/
 
   /* center align subhead text like the masthead */
   .subhead h1,
@@ -855,22 +859,40 @@ only screen and (min-resolution: 1.5dppx) {
         /*background-color: red;*/
     }
 
+    .jumbotron .logo img {
+    }
+
+    .jumbotron:after {
+        background: url(../images/linedpaper_@2x.png) repeat center center;
+        background-size: 40%;
+    }
+
+    .f43-social-buttons li a {
+        background-size: 100% !important;
+    }
+
     .marketing .team .popover a.linkedin {
-        background: url(../images/social/icon_linkedin.png) no-repeat left center;
+        background: url(../images/social/icon_linkedin@2x.png) no-repeat left center;
         background-size: 40px;
     }
 
-    /*.marketing .team .popover a.email {*/
-        /*background: url(../images/social/icon_email.png) no-repeat left center;*/
-    /*}*/
+    .marketing .team .popover a.email {
+        background: url(../images/social/icon_email@2x.png) no-repeat left center;
+        background-size: 40px;
+    }
 
     /*.marketing .team .popover a.website {*/
         /*background: url(../images/social/icon_website.png) no-repeat left center;*/
     /*}*/
 
+    .footer {
+        background: url(../images/linedpaper_@2x.png) repeat center center;
+        background-size: 35% !important;
+    }
+
     .footer a.back-up {
         background: url(../images/arrow@2x.png) no-repeat top left;
-        background-size: 50%;
+        background-size: 60px;
     }
 }
 

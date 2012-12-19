@@ -9,7 +9,14 @@ window.enquire=function(e){"use strict";function t(e,t){var n=0,r=e.length,i;for
  * Time: 9:01 AM
  * To change this template use File | Settings | File Templates.
  */
+
 console.log('registering enquire listeners')
+
 enquire.register("screen and (max-width:1000px)", [
     { match : function() { console.log("1000px hit"); } },
 ]).listen();
+
+console.log('registering enquire listener for retina')
+enquire.register("only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx)",  { match : function() { console.log("retina"); } }).listen();
+
+enquire.register("screen and (min-resolution: 2dppx)",  { match : function() { console.log("retina FF"); } }).listen();
