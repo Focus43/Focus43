@@ -41,7 +41,7 @@
             <div id="home" class="jumbotron masthead">
                 <div class="container">
                     <div class="logo">
-                        <img src="<?php echo F43_PACKAGE_IMAGES_DIR; ?>logo-text@2x.png" width='500'>
+                        <img src="<?php echo F43_PACKAGE_IMAGES_DIR; ?>logo-text.png" width="500">
                     </div>
                     <p><?php $a = new Area('Tagline'); $a->display($c); ?></p>
                 </div>
